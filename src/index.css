@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 body{
-  background-color: #EAEAEA;
-}
-
-/* .color-container{
-  background-image: url(./images/color.jpeg);
+  background-color: #89e291;
   
-} */
+}
