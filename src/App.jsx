@@ -17,7 +17,7 @@ const App = () => {
   const [correctColor, setCorrectColor] = useState("");
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
-  const [gameStatus, setGameStatus] = useState("Make a Guess!!!");
+  const [gameStatus, setGameStatus] = useState("Test your color recognition skills in this fun and fast-paced color guessing game!  Challenge yourself and improve your color perception!");
 
   useEffect(() => {
     const savedHighScore = localStorage.getItem("highScore");
