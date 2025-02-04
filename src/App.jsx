@@ -46,7 +46,7 @@ const App = () => {
       setTimeout(generateNewRound, 1000);
     } else {
       setGameStatus("Wrong! Try again.");
-      const newScore = Math.max( score - 3);
+      const newScore = Math.max(0, score - 3);
       setScore(newScore);
     }
   };
