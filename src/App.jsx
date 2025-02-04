@@ -67,8 +67,8 @@ const App = () => {
   return (
     <div className="flex flex-col items-center mt-16 relative border-2 p-5 sm:p-8 md:p-10 lg:p-12 w-full sm:w-4/5 md:w-3/5 lg:w-3/12 border-blue-600 mx-auto bg-red-200">
       <div><h1></h1></div>
-      <div className="absolute top-4 right-1 text-lg font-bold">Highest Score: {highScore}</div>
-      <h2 className="text-xl font-bold text-red-800 mb-4 text-center">Color Guessing Game</h2>
+      <div className="absolute top-4 right-1  text-lg font-bold">Highest Score: {highScore}</div>
+      <h2 className="text-xl font-bold text-red-800 my-7 text-center">Color Guessing Game</h2>
       <div
         data-testid="colorBox"
         className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-lg border-2 border-black shadow-lg mb-4"
