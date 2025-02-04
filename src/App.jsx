@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const App = () => {
   const colorShades = {
@@ -9,15 +9,30 @@ const App = () => {
     cyan: ["rgb(0, 255, 255)", "rgb(0, 230, 230)", "rgb(0, 210, 210)", "rgb(0, 190, 190)", "rgb(0, 170, 170)", "rgb(0, 150, 150)"],
     plum: ["rgb(221, 160, 221)", "rgb(200, 145, 200)", "rgb(180, 130, 180)", "rgb(160, 115, 160)", "rgb(140, 100, 140)", "rgb(120, 85, 120)"]
   };
-  
+
   const getRandomColor = () => Object.keys(colorShades)[Math.floor(Math.random() * Object.keys(colorShades).length)];
-  
+
   const [targetColor, setTargetColor] = useState(getRandomColor);
   const [shuffledColors, setShuffledColors] = useState([]);
   const [correctColor, setCorrectColor] = useState("");
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
   const [gameStatus, setGameStatus] = useState("Make a Guess!!!");
+
+ 
+  useEffect(() => {
+    const savedHighScore = localStorage.getItem("highScore");
+    if (savedHighScore) {
+      setHighScore(parseInt(savedHighScore));
+    }
+  }, []);
+
+
+  useEffect(() => {
+    if (highScore > 0) {
+      localStorage.setItem("highScore", highScore);
+    }
+  }, [highScore]);
 
   const startNewGame = () => {
     setScore(0);
@@ -36,9 +51,9 @@ const App = () => {
 
   const handleGuess = (color) => {
     if (color === correctColor) {
-      const newScore = score +10;
-      setScore(newScore)
-      
+      const newScore = score + 10;
+      setScore(newScore);
+
       if (newScore > highScore) {
         setHighScore(newScore);
       }
