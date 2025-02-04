@@ -73,7 +73,7 @@ const App = () => {
   };
 
   return (
-    <div className="flex flex-col items-center mt-16 relative  p-5 sm:p-8 md:p-10 lg:p-12 w-full sm:w-4/5 md:w-3/5 lg:w-3/12 mx-auto ">
+    <div className="flex flex-col items-center mt-16 relative  p-5 sm:p-8 md:p-10 lg:p-12 w-full sm:w-4/5 md:w-3/5 lg:w-3/12 mx-auto bg-green-600 ">
       <div><h1></h1></div>
       <div className="absolute top-4 right-1  text-lg font-bold">Highest Score: {highScore}</div>
       <h2 className="text-xl font-bold text-red-800 my-7 text-center">Color Guessing Game</h2>
