@@ -19,14 +19,12 @@ const App = () => {
   const [highScore, setHighScore] = useState(0);
   const [gameStatus, setGameStatus] = useState("Make a Guess!!!");
 
- 
   useEffect(() => {
     const savedHighScore = localStorage.getItem("highScore");
     if (savedHighScore) {
       setHighScore(parseInt(savedHighScore));
     }
   }, []);
-
 
   useEffect(() => {
     if (highScore > 0) {
@@ -67,17 +65,17 @@ const App = () => {
   };
 
   return (
-    <div className="flex flex-col items-center mt-16 relative border-2 p-10 w-3/12 border-blue-600 mx-96 bg-red-200">
+    <div className="flex flex-col items-center mt-16 relative border-2 p-5 sm:p-8 md:p-10 lg:p-12 w-full sm:w-4/5 md:w-3/5 lg:w-3/12 border-blue-600 mx-auto bg-red-200">
       <div><h1></h1></div>
       <div className="absolute top-4 right-1 text-lg font-bold">Highest Score: {highScore}</div>
       <h2 className="text-xl font-bold text-red-800 mb-4 text-center">Color Guessing Game</h2>
       <div
         data-testid="colorBox"
-        className="w-40 h-40 rounded-lg border-2 border-black shadow-lg mb-4"
+        className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-lg border-2 border-black shadow-lg mb-4"
         style={{ backgroundColor: correctColor }}
       ></div>
 
-      <div data-testid="colorOption" className="grid grid-cols-3 gap-4">
+      <div data-testid="colorOption" className="grid grid-cols-3 gap-4 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-5">
         {shuffledColors.map((color) => (
           <button
             key={color}
@@ -89,13 +87,13 @@ const App = () => {
         ))}
       </div>
 
-      <p data-testid="gameStatus" className="mt-4 text-sm text-gray-400 font-semibold">{gameStatus}</p>
-      <p data-testid="score" className="text-lg">Score: {score}</p>
+      <p data-testid="gameStatus" className="mt-4 text-sm sm:text-base text-gray-400 font-semibold">{gameStatus}</p>
+      <p data-testid="score" className="text-lg sm:text-xl md:text-2xl">{`Score: ${score}`}</p>
 
       <button
         data-testid="newGameButton"
         onClick={startNewGame}
-        className="mt-4 bg-red-700 text-white px-6 py-2 rounded-lg text-xl shadow-md hover:bg-red-500"
+        className="mt-4 bg-red-700 text-white px-6 py-2 rounded-lg text-xl sm:text-2xl md:text-3xl shadow-md hover:bg-red-500"
       >
         New Game
       </button>
