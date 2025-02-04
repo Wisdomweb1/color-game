@@ -87,7 +87,7 @@ const App = () => {
         ))}
       </div>
 
-      <p data-testid="gameStatus" className="mt-4 text-sm sm:text-base text-gray-400 font-semibold">{gameStatus}</p>
+      <p data-testid="gameStatus" className="mt-4 text-sm p-1 sm:text-base text-gray-400 font-semibold">{gameStatus}</p>
       <p data-testid="score" className="text-lg sm:text-xl md:text-2xl">{`Score: ${score}`}</p>
 
       <button
